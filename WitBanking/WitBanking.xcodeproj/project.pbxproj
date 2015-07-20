@@ -15,6 +15,9 @@
 		4EB5EBF51B44EDB500944528 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5EBF41B44EDB500944528 /* Images.xcassets */; };
 		4EB5EBF81B44EDB500944528 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5EBF61B44EDB500944528 /* LaunchScreen.xib */; };
 		4EB5EC041B44EDB600944528 /* WitBankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5EC031B44EDB600944528 /* WitBankingTests.swift */; };
+		4EEDAF231B5CED0300DC4BFC /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEDAF221B5CED0300DC4BFC /* KeychainWrapper.m */; };
+		4EFAB2F11B4B82B000A46816 /* WITLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFAB2F01B4B82B000A46816 /* WITLoginViewController.swift */; };
+		4EFAB2F31B4B8FD800A46816 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFAB2F21B4B8FD800A46816 /* LocalAuthentication.framework */; };
 		8945BE334430A5FC28A353D5 /* libPods-WitBanking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54454084CADEDEFE6978A85C /* libPods-WitBanking.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,10 @@
 		4EB5EBFD1B44EDB600944528 /* WitBankingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WitBankingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB5EC021B44EDB600944528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EB5EC031B44EDB600944528 /* WitBankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitBankingTests.swift; sourceTree = "<group>"; };
+		4EEDAF211B5CED0300DC4BFC /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		4EEDAF221B5CED0300DC4BFC /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		4EFAB2F01B4B82B000A46816 /* WITLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WITLoginViewController.swift; sourceTree = "<group>"; };
+		4EFAB2F21B4B8FD800A46816 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		54454084CADEDEFE6978A85C /* libPods-WitBanking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WitBanking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06F9CFE352C51915FB755DA /* Pods-WitBanking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WitBanking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WitBanking/Pods-WitBanking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EFAB2F31B4B8FD800A46816 /* LocalAuthentication.framework in Frameworks */,
 				4E38FC851B44F0F200AFC33E /* AVFoundation.framework in Frameworks */,
 				8945BE334430A5FC28A353D5 /* libPods-WitBanking.a in Frameworks */,
 			);
@@ -90,6 +98,7 @@
 		4EB5EBE71B44EDB500944528 /* WitBanking */ = {
 			isa = PBXGroup;
 			children = (
+				4EEDAF201B5CECEF00DC4BFC /* Login */,
 				4EB5EBEA1B44EDB500944528 /* AppDelegate.swift */,
 				4E38FC861B44FCBD00AFC33E /* WITLandingViewController.swift */,
 				4EB5EBF11B44EDB500944528 /* Main.storyboard */,
@@ -127,6 +136,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4EEDAF201B5CECEF00DC4BFC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4EEDAF211B5CED0300DC4BFC /* KeychainWrapper.h */,
+				4EEDAF221B5CED0300DC4BFC /* KeychainWrapper.m */,
+				4EFAB2F01B4B82B000A46816 /* WITLoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		F265E3A8DBDA81B5EA5863BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +158,7 @@
 		FAF83E8E35CB5B5EBC0EB8F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4EFAB2F21B4B8FD800A46816 /* LocalAuthentication.framework */,
 				4E38FC841B44F0F200AFC33E /* AVFoundation.framework */,
 				54454084CADEDEFE6978A85C /* libPods-WitBanking.a */,
 			);
@@ -283,6 +303,8 @@
 				4E38FC871B44FCBD00AFC33E /* WITLandingViewController.swift in Sources */,
 				4EB5EBEB1B44EDB500944528 /* AppDelegate.swift in Sources */,
 				4EB5EBEE1B44EDB500944528 /* WitBanking.xcdatamodeld in Sources */,
+				4EFAB2F11B4B82B000A46816 /* WITLoginViewController.swift in Sources */,
+				4EEDAF231B5CED0300DC4BFC /* KeychainWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
