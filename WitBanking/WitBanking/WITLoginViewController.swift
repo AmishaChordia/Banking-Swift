@@ -13,16 +13,28 @@ class WITLoginViewController: UIViewController {
 
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var userName: UITextField!
+    let userKeychainWrapper = KeychainWrapper()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if checkForSavedCredentials(){
+            authenticateUser()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func checkForSavedCredentials() -> Bool {
+        if let savedUserName : AnyObject = NSUserDefaults.standardUserDefaults().valueForKey(WITConstants.kUsername) {
+            userName.text = savedUserName as! String
+            return true
+        }
+        return false
     }
     
     func authenticateUser() {
@@ -53,13 +65,11 @@ class WITLoginViewController: UIViewController {
                     case LAError.UserFallback.rawValue:
                         println("User selected to enter custom password")
                         NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                           // self.showPasswordAlert()
                         })
                         
                     default:
                         println("Authentication failed")
                         NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                            //self.showPasswordAlert()
                         })
                     }
                 }
@@ -67,7 +77,26 @@ class WITLoginViewController: UIViewController {
         }
     }
 
+    func validateTextFields() {
+        if (count(userName.text) > 0){
+            if password.text == WITConstants.kPassword {
+               // segue - code
+                NSUserDefaults.standardUserDefaults().setValue(userName.text, forKey: WITConstants.kUsername)
+                userKeychainWrapper.mySetObject(password.text, forKey: kSecValueData)
+                userKeychainWrapper.writeToKeychain()
+            }
+            else{
+                password.backgroundColor = UIColor.WITErrorCellColor()
+            }
+        }
+        else{
+            userName.backgroundColor = UIColor.WITErrorCellColor()
+        }
+            
+    }
+    
     @IBAction func loginTapped(sender: UIButton) {
-        authenticateUser()
+       // authenticateUser()
+        validateTextFields()
     }
 }
