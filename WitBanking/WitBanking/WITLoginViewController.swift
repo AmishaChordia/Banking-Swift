@@ -45,8 +45,9 @@ class WITLoginViewController: UIViewController {
             context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: authenticationString, reply: { (success, authError) -> Void in
                 
                 
-                
+                dispatch_async(dispatch_get_main_queue(),{
                 if success {
+                   self.pushToLandingViewController()
                     
                 }
                 else{
@@ -74,6 +75,8 @@ class WITLoginViewController: UIViewController {
                     }
                 }
             })
+            })
+
         }
     }
 
@@ -84,6 +87,7 @@ class WITLoginViewController: UIViewController {
                 NSUserDefaults.standardUserDefaults().setValue(userName.text, forKey: WITConstants.kUsername)
                 userKeychainWrapper.mySetObject(password.text, forKey: kSecValueData)
                 userKeychainWrapper.writeToKeychain()
+                pushToLandingViewController()
             }
             else{
                 password.backgroundColor = UIColor.WITErrorCellColor()
@@ -98,5 +102,10 @@ class WITLoginViewController: UIViewController {
     @IBAction func loginTapped(sender: UIButton) {
        // authenticateUser()
         validateTextFields()
+    }
+    
+    func pushToLandingViewController() {
+        let landingView = storyboard?.instantiateViewControllerWithIdentifier("WITLandingViewController") as! WITLandingViewController
+        navigationController?.pushViewController(landingView, animated: true)
     }
 }

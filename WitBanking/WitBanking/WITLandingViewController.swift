@@ -11,10 +11,9 @@ import UIKit
 class WITLandingViewController: UIViewController , WitDelegate {
 
     @IBOutlet weak var intentLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "GnC Bank"
-        
         Wit.sharedInstance().delegate = self
         // Do any additional setup after loading the view.
     }

@@ -33,12 +33,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkV-WD-er7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="dGH-Hb-Iwi"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="WIT Bank" id="uo2-FW-Teg"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="LZG-ms-UxK" secondAttribute="centerY" constant="68" id="7m1-0A-dST"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="r8G-Z3-uiT" secondAttribute="bottom" constant="217" id="EsH-h2-L1k"/>
                             <constraint firstItem="r8G-Z3-uiT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="85" id="N2r-TE-U5j"/>
+                            <constraint firstItem="qkV-WD-er7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QNL-kA-nZj"/>
+                            <constraint firstAttribute="trailing" secondItem="qkV-WD-er7" secondAttribute="trailing" id="WcU-9u-msU"/>
+                            <constraint firstItem="qkV-WD-er7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WkQ-JC-dzK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="r8G-Z3-uiT" secondAttribute="trailing" constant="84" id="cNg-aM-8Hq"/>
                             <constraint firstItem="r8G-Z3-uiT" firstAttribute="top" secondItem="LZG-ms-UxK" secondAttribute="bottom" constant="77" id="svG-xK-9Sy"/>
                             <constraint firstAttribute="centerX" secondItem="LZG-ms-UxK" secondAttribute="centerX" id="xi4-F5-m52"/>
