@@ -96,24 +96,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yq-ep-aGF">
-                                <rect key="frame" x="155" y="242" width="290" height="40"/>
+                                <rect key="frame" x="155" y="242" width="290" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="EE5-9C-tlY"/>
-                                    <constraint firstAttribute="height" constant="40" id="R0b-Zh-Mg4"/>
+                                    <constraint firstAttribute="height" constant="35" id="R0b-Zh-Mg4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MO4-hg-Z5z">
-                                <rect key="frame" x="155" y="302" width="290" height="40"/>
+                                <rect key="frame" x="155" y="297" width="290" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="4GV-Dd-cQI"/>
+                                    <constraint firstAttribute="height" constant="35" id="4GV-Dd-cQI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mC9-um-nTB">
-                                <rect key="frame" x="155" y="364" width="290" height="40"/>
+                                <rect key="frame" x="155" y="354" width="290" height="40"/>
                                 <color key="backgroundColor" red="0.90588241820000004" green="0.3803921938" blue="0.36862745879999997" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WVp-Ok-xsA"/>

@@ -16,6 +16,7 @@
 		4EB5EBF81B44EDB500944528 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5EBF61B44EDB500944528 /* LaunchScreen.xib */; };
 		4EB5EC041B44EDB600944528 /* WitBankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5EC031B44EDB600944528 /* WitBankingTests.swift */; };
 		4EC9F73D1B5D6825006E34CD /* WITColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC9F73C1B5D6825006E34CD /* WITColors.swift */; };
+		4EC9F73F1B5D78B9006E34CD /* WITAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC9F73E1B5D78B9006E34CD /* WITAccountManager.swift */; };
 		4EEDAF231B5CED0300DC4BFC /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEDAF221B5CED0300DC4BFC /* KeychainWrapper.m */; };
 		4EEDAF281B5D609E00DC4BFC /* WITConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEDAF271B5D609E00DC4BFC /* WITConstants.swift */; };
 		4EFAB2F11B4B82B000A46816 /* WITLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFAB2F01B4B82B000A46816 /* WITLoginViewController.swift */; };
@@ -49,6 +50,7 @@
 		4EB5EC021B44EDB600944528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EB5EC031B44EDB600944528 /* WitBankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitBankingTests.swift; sourceTree = "<group>"; };
 		4EC9F73C1B5D6825006E34CD /* WITColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WITColors.swift; sourceTree = "<group>"; };
+		4EC9F73E1B5D78B9006E34CD /* WITAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WITAccountManager.swift; sourceTree = "<group>"; };
 		4EEDAF211B5CED0300DC4BFC /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		4EEDAF221B5CED0300DC4BFC /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		4EEDAF271B5D609E00DC4BFC /* WITConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WITConstants.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				4E38FC801B44F07E00AFC33E /* WitBanking-Bridging-Header.h */,
 				4EEDAF271B5D609E00DC4BFC /* WITConstants.swift */,
 				4EC9F73C1B5D6825006E34CD /* WITColors.swift */,
+				4EC9F73E1B5D78B9006E34CD /* WITAccountManager.swift */,
 			);
 			path = WitBanking;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				4EB5EBEB1B44EDB500944528 /* AppDelegate.swift in Sources */,
 				4EB5EBEE1B44EDB500944528 /* WitBanking.xcdatamodeld in Sources */,
 				4EFAB2F11B4B82B000A46816 /* WITLoginViewController.swift in Sources */,
+				4EC9F73F1B5D78B9006E34CD /* WITAccountManager.swift in Sources */,
 				4EEDAF231B5CED0300DC4BFC /* KeychainWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

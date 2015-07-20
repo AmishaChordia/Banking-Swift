@@ -7,26 +7,18 @@
 //
 
 import UIKit
-import LocalAuthentication
 
 class WITLoginViewController: UIViewController {
-
+    
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var userName: UITextField!
     let userKeychainWrapper = KeychainWrapper()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if checkForSavedCredentials(){
             authenticateUser()
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func checkForSavedCredentials() -> Bool {
@@ -38,52 +30,19 @@ class WITLoginViewController: UIViewController {
     }
     
     func authenticateUser() {
-        let context = LAContext()
-        var error : NSError?
-        let authenticationString = "Please authenticate your credentials."
-        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
-            context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: authenticationString, reply: { (success, authError) -> Void in
-                
-                
-                dispatch_async(dispatch_get_main_queue(),{
-                if success {
-                   self.pushToLandingViewController()
-                    
-                }
-                else{
-                    // If authentication failed then show a message to the console with a short description.
-                    // In case that the error is a user fallback, then show the password alert view.
-                    println(authError?.localizedDescription)
-                    
-                    switch authError!.code {
-                        
-                    case LAError.SystemCancel.rawValue:
-                        println("Authentication was cancelled by the system")
-                        
-                    case LAError.UserCancel.rawValue:
-                        println("Authentication was cancelled by the user")
-                        
-                    case LAError.UserFallback.rawValue:
-                        println("User selected to enter custom password")
-                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                        })
-                        
-                    default:
-                        println("Authentication failed")
-                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                        })
-                    }
+        WITAccountManager.evaluateTouchIDAuthentication ({ (success, error) -> Void in
+            dispatch_async(dispatch_get_main_queue(),{
+                if ((error == nil ) && (success != nil)) {
+                    self.pushToLandingViewController()
                 }
             })
-            })
-
-        }
+        })
     }
-
+    
     func validateTextFields() {
         if (count(userName.text) > 0){
             if password.text == WITConstants.kPassword {
-               // segue - code
+                // segue - code
                 NSUserDefaults.standardUserDefaults().setValue(userName.text, forKey: WITConstants.kUsername)
                 userKeychainWrapper.mySetObject(password.text, forKey: kSecValueData)
                 userKeychainWrapper.writeToKeychain()
@@ -96,15 +55,14 @@ class WITLoginViewController: UIViewController {
         else{
             userName.backgroundColor = UIColor.WITErrorCellColor()
         }
-            
     }
     
     @IBAction func loginTapped(sender: UIButton) {
-       // authenticateUser()
         validateTextFields()
     }
     
     func pushToLandingViewController() {
+        self.password.text = self.userKeychainWrapper.myObjectForKey("v_Data") as! String
         let landingView = storyboard?.instantiateViewControllerWithIdentifier("WITLandingViewController") as! WITLandingViewController
         navigationController?.pushViewController(landingView, animated: true)
     }
