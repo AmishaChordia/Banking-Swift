@@ -11,9 +11,13 @@ import UIKit
 class WITLandingViewController: UIViewController , WitDelegate {
 
     @IBOutlet weak var intentLabel: UILabel!
+    var intent : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         Wit.sharedInstance().delegate = self
         // Do any additional setup after loading the view.
     }
@@ -30,14 +34,22 @@ class WITLandingViewController: UIViewController , WitDelegate {
 //        
 //        labelView.text = [NSString stringWithFormat:@"intent = %@", intent];
         
-        let outcomeArray = outcomes as NSArray!
-        
-        let firstOutcome = outcomeArray.firstObject as! NSDictionary!
-        
-        let intentString : String = firstOutcome.objectForKey("intent") as! String
-        
-        intentLabel.text = "intent = " + intentString
+        if let WITError = e {
+            
+        }
+        else {
+            if outcomes != nil && outcomes.count > 0 {
+                
+                if let dict = outcomes.first as? NSDictionary {
+                   self.intent = dict.valueForKey("intent") as? String
+                }
+            }
+            
+            if let appendString = self.intent {
+                intentLabel.text = "intent = " + appendString
+            }
         
 
     }
+}
 }
