@@ -23,7 +23,7 @@ class WITLoginViewController: UIViewController {
     
     func checkForSavedCredentials() -> Bool {
         if let savedUserName : AnyObject = NSUserDefaults.standardUserDefaults().valueForKey(WITConstants.kUsername) {
-            userName.text = savedUserName as! String
+            userName.text = savedUserName as? String
             return true
         }
         return false
@@ -40,7 +40,7 @@ class WITLoginViewController: UIViewController {
     }
     
     func validateTextFields() {
-        if (count(userName.text) > 0){
+        if (userName.text?.characters.count > 0){
             if password.text == WITConstants.kPassword {
                 // segue - code
                 NSUserDefaults.standardUserDefaults().setValue(userName.text, forKey: WITConstants.kUsername)
@@ -62,7 +62,7 @@ class WITLoginViewController: UIViewController {
     }
     
     func pushToLandingViewController() {
-        self.password.text = self.userKeychainWrapper.myObjectForKey("v_Data") as! String
+        self.password.text = self.userKeychainWrapper.myObjectForKey("v_Data") as? String
         let landingView = storyboard?.instantiateViewControllerWithIdentifier("WITLandingViewController") as! WITLandingViewController
         navigationController?.pushViewController(landingView, animated: true)
     }

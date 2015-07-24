@@ -220,6 +220,7 @@
 		4EB5EBDD1B44EDB500944528 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Chordia, Amisha (US - Mumbai)";
 				TargetAttributes = {
