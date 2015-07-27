@@ -9,8 +9,13 @@
 import UIKit
 
 struct WITConstants {
-    //Login
+    //MARK: Login
     static let kPassword : String = "password"
     static let kUsername : String = "username"
     
+    //MARK: Intents
+    static let WITBlockCard : String = "block_card"
+    static let WITTransferMoney : String = "transfer_money"
+    static let WITChangePIN : String = "password"
+    static let WITLastTransaction : String = "password"
 }

@@ -12,7 +12,8 @@ class WITLandingViewController: UIViewController , WitDelegate {
 
     @IBOutlet weak var intentLabel: UILabel!
     var intent : String?
-    
+    var intentModel : WITIntentModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,29 +28,33 @@ class WITLandingViewController: UIViewController , WitDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - Wit Delegate
 
     func witDidGraspIntent(outcomes: [AnyObject]!, messageId: String!, customData: AnyObject!, error e: NSError!) {
-//        NSDictionary *firstOutcome = [outcomes objectAtIndex:0];
-//        NSString *intent = [firstOutcome objectForKey:@"intent"];
-//        
-//        labelView.text = [NSString stringWithFormat:@"intent = %@", intent];
         
-        if let WITError = e {
+        if (e != nil) {
             
         }
         else {
             if outcomes != nil && outcomes.count > 0 {
                 
                 if let dict = outcomes.first as? NSDictionary {
-                   self.intent = dict.valueForKey("intent") as? String
+                    intentModel = WITIntentModel(dict: dict)
+                    if intentModel?.intent == WITConstants.WITBlockCard {
+                        
+                    }
+                    if intentModel?.intent == WITConstants.WITTransferMoney {
+                        
+                    }
+                    
                 }
+                
             }
             
-            if let appendString = self.intent {
+            if let appendString = self.intentModel?.intent {
                 intentLabel.text = "intent = " + appendString
             }
-        
-
+        }
     }
-}
 }

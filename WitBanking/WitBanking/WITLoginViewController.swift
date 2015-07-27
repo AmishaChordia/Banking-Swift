@@ -21,6 +21,8 @@ class WITLoginViewController: UIViewController {
         }
     }
     
+    //MARK: Login Authentication
+    
     func checkForSavedCredentials() -> Bool {
         if let savedUserName : AnyObject = NSUserDefaults.standardUserDefaults().valueForKey(WITConstants.kUsername) {
             userName.text = savedUserName as? String
@@ -39,6 +41,8 @@ class WITLoginViewController: UIViewController {
         })
     }
     
+    //MARK: Login Validation
+    
     func validateTextFields() {
         if (userName.text?.characters.count > 0){
             if password.text == WITConstants.kPassword {
@@ -56,6 +60,8 @@ class WITLoginViewController: UIViewController {
             userName.backgroundColor = UIColor.WITErrorCellColor()
         }
     }
+    
+    //MARK: IBAction
     
     @IBAction func loginTapped(sender: UIButton) {
         validateTextFields()

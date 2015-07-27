@@ -15,8 +15,10 @@
 		4EB5EBF51B44EDB500944528 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5EBF41B44EDB500944528 /* Images.xcassets */; };
 		4EB5EBF81B44EDB500944528 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5EBF61B44EDB500944528 /* LaunchScreen.xib */; };
 		4EB5EC041B44EDB600944528 /* WitBankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5EC031B44EDB600944528 /* WitBankingTests.swift */; };
+		4EC573991B65E8CA00F83CDF /* WITIntentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC573981B65E8CA00F83CDF /* WITIntentModel.swift */; };
 		4EC9F73D1B5D6825006E34CD /* WITColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC9F73C1B5D6825006E34CD /* WITColors.swift */; };
 		4EC9F73F1B5D78B9006E34CD /* WITAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC9F73E1B5D78B9006E34CD /* WITAccountManager.swift */; };
+		4ED2ED371B65FB72005911A8 /* WITEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2ED361B65FB72005911A8 /* WITEntityModel.swift */; };
 		4EEDAF231B5CED0300DC4BFC /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEDAF221B5CED0300DC4BFC /* KeychainWrapper.m */; };
 		4EEDAF281B5D609E00DC4BFC /* WITConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEDAF271B5D609E00DC4BFC /* WITConstants.swift */; };
 		4EFAB2F11B4B82B000A46816 /* WITLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFAB2F01B4B82B000A46816 /* WITLoginViewController.swift */; };
@@ -49,8 +51,10 @@
 		4EB5EBFD1B44EDB600944528 /* WitBankingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WitBankingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB5EC021B44EDB600944528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EB5EC031B44EDB600944528 /* WitBankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitBankingTests.swift; sourceTree = "<group>"; };
+		4EC573981B65E8CA00F83CDF /* WITIntentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WITIntentModel.swift; sourceTree = "<group>"; };
 		4EC9F73C1B5D6825006E34CD /* WITColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WITColors.swift; sourceTree = "<group>"; };
 		4EC9F73E1B5D78B9006E34CD /* WITAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WITAccountManager.swift; sourceTree = "<group>"; };
+		4ED2ED361B65FB72005911A8 /* WITEntityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WITEntityModel.swift; sourceTree = "<group>"; };
 		4EEDAF211B5CED0300DC4BFC /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		4EEDAF221B5CED0300DC4BFC /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		4EEDAF271B5D609E00DC4BFC /* WITConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WITConstants.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			children = (
 				4EB5EBEA1B44EDB500944528 /* AppDelegate.swift */,
 				4E38FC861B44FCBD00AFC33E /* WITLandingViewController.swift */,
+				4ED2ED361B65FB72005911A8 /* WITEntityModel.swift */,
+				4EC573981B65E8CA00F83CDF /* WITIntentModel.swift */,
 				4EB5EBF11B44EDB500944528 /* Main.storyboard */,
 				4EEDAF201B5CECEF00DC4BFC /* Login */,
 				4EB5EBF41B44EDB500944528 /* Images.xcassets */,
@@ -311,9 +317,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EEDAF281B5D609E00DC4BFC /* WITConstants.swift in Sources */,
+				4EC573991B65E8CA00F83CDF /* WITIntentModel.swift in Sources */,
 				4E38FC871B44FCBD00AFC33E /* WITLandingViewController.swift in Sources */,
 				4EC9F73D1B5D6825006E34CD /* WITColors.swift in Sources */,
 				4EB5EBEB1B44EDB500944528 /* AppDelegate.swift in Sources */,
+				4ED2ED371B65FB72005911A8 /* WITEntityModel.swift in Sources */,
 				4EB5EBEE1B44EDB500944528 /* WitBanking.xcdatamodeld in Sources */,
 				4EFAB2F11B4B82B000A46816 /* WITLoginViewController.swift in Sources */,
 				4EC9F73F1B5D78B9006E34CD /* WITAccountManager.swift in Sources */,
